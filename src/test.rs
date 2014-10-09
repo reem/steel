@@ -6,7 +6,13 @@ use {time};
 
 pub struct Test {
     pub name: String,
-    test: fn()
+    pub test: fn()
+}
+
+impl Test {
+    pub fn new(name: String, test: fn()) -> Test {
+        Test { name: name, test: test }
+    }
 }
 
 pub enum TestReport {
