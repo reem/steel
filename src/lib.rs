@@ -1,7 +1,6 @@
 #![license = "MIT"]
 //#![deny(missing_doc)]
 #![deny(warnings)]
-#![feature(associated_types)]
 
 //! Crate comment goes here
 

@@ -20,9 +20,7 @@ pub enum TestReport {
     Failed
 }
 
-impl Run for Test {
-    type Report = TestReport;
-
+impl Run<TestReport> for Test {
     fn run(&self) -> TestReport {
         let test = self.test;
         let result = task::try(proc() {

@@ -23,10 +23,8 @@ impl Suite {
     }
 }
 
-impl<'a> Run for &'a Suite {
-    // Hack because no HKL...
-    type Report = SuiteReports<'a>;
-
+// Hack because no HKL...
+impl<'a> Run<SuiteReports<'a>> for &'a Suite {
     fn run(&self) -> SuiteReports<'a> {
         SuiteReports {
             stack: vec![*self],
