@@ -5,11 +5,26 @@ use run::Run;
 
 pub struct Suite {
     pub name: String,
-    tests: Vec<Test>,
-    subsuites: Vec<Suite>
+    pub tests: Vec<Test>,
+    pub subsuites: Vec<Suite>
+}
+
+impl Suite {
+    pub fn new(name: String) -> Suite {
+        Suite {
+            name: name,
+            tests: vec![],
+            subsuites: vec![]
+        }
+    }
+
+    pub fn run<'a>(&'a self) -> SuiteReports<'a> {
+        (&self).run()
+    }
 }
 
 impl<'a> Run for &'a Suite {
+    // Hack because no HKL...
     type Report = SuiteReports<'a>;
 
     fn run(&self) -> SuiteReports<'a> {
