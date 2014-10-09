@@ -9,7 +9,7 @@ extern crate time;
 
 pub use run::Run;
 pub use suite::Suite;
-pub use test::{Test, TestReport, Passed, Failed};
+pub use test::Test;
 
 pub mod run;
 pub mod suite;
