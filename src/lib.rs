@@ -8,7 +8,11 @@
 extern crate "test" as testcrate;
 extern crate time;
 
-mod run;
-mod suite;
-mod test;
+pub use run::Run;
+pub use suite::Suite;
+pub use test::{Test, TestReport, Passed, Failed};
+
+pub mod run;
+pub mod suite;
+pub mod test;
 
