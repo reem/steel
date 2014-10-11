@@ -4,6 +4,7 @@ use run::Run;
 
 use {time};
 
+#[deriving(Clone)]
 pub struct Test {
     pub name: String,
     pub test: fn()
