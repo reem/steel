@@ -3,6 +3,9 @@ use std::vec::MoveItems;
 use test::{Test, TestReport};
 use run::Run;
 
+use self::SuiteReportsState::*;
+use self::SuiteReport::*;
+
 #[deriving(Clone)]
 pub struct Suite {
     pub name: String,

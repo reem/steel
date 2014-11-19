@@ -31,8 +31,8 @@ impl Run<TestReport> for Test {
         });
 
         match result {
-            Ok(dur) => Passed(dur),
-            _ => Failed
+            Ok(dur) => TestReport::Passed(dur),
+            _ => TestReport::Failed
         }
     }
 }
